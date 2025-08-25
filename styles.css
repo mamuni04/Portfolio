@@ -323,16 +323,28 @@ img {
   width: 95%;
 }
 
-.skills__ {
+.skills__Critical {
   width: 85%;
 }
 
-.skills__ {
-  width: 65%;
+.skills__Patient {
+  width: 70%;
 }
 
-.skills__ {
-  width: 85%;
+.skills__Teamwork {
+  width: 90%;
+}
+
+.skills__Professionalism {
+  width: 70%;
+}
+
+.skills__Time {
+  width: 100%;
+}
+
+.skills__Adaptability {
+  width: 98%;
 }
 
 .skills__img {
