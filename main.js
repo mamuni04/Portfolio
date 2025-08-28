@@ -1,3 +1,23 @@
+(function(){
+      emailjs.init({ publicKey: "xxs1W4usrzHV2yTwb" }); // from EmailJS Account page
+    })();
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contact__form");
+      const status = document.getElementById("status");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        status.textContent = "Sending...";
+        try {
+          await emailjs.sendForm("service_mir3x1l", "template_eopkl8d", form);
+          status.textContent = "Message sent!";
+          form.reset();
+        } catch (err) {
+          console.error(err);
+          status.textContent = "Failed to send. Try again.";
+        }
+      });
+    });
+
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -71,4 +91,5 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
            alert('Failed to send message: ' + error.text);
         });
     });
+
 
