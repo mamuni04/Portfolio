@@ -54,3 +54,21 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+
+
+(function() {
+      emailjs.init("xxs1W4usrzHV2yTwb"); // Replace with your actual public key
+    })();
+
+    document.getElementById('contact__form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_mir3x1l', 'template_eopkl8d', this)
+        .then(function(response) {
+           alert('Message sent successfully!');
+        }, function(error) {
+           alert('Failed to send message: ' + error.text);
+        });
+    });
+
